@@ -1,0 +1,332 @@
+@import url('https://fonts.googleapis.com/css2?family=Scheherazade+New:wght@700&display=swap');
+*{
+  box-sizing: border-box;
+  
+}
+html{
+height: 100%;
+}
+body {
+  text-align: center;
+  display: flex;
+  height: 100% !important;
+  background-size: cover;
+  color: white;
+  font-family: 'Amatic SC', cursive;
+  background-color: rgb(95,207,128);
+  overflow: hidden;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+#quote-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+}
+/* .text {
+  font-size: 4rem;
+  font-weight: 400;
+  line-height: 1.1;
+  text-shadow: 0 1px 1px rgba(0,0,0, .8);
+  position: relative;
+  margin: 0;
+  width: 90%;
+  }  */
+
+  * {
+  /*--responsive: calc((var(--min-font) * 1px) + (var(--max-font) - var(--min-font)) * ((100vw - 420px) / (1200 - 420)));*/
+  --responsive: (var(--min-font) * 1px) + (var(--max-font) - var(--min-font)) *
+    ((100vw - 420px) / (1200 - 420));
+}
+
+
+
+/* Optimal solution? */
+.text{
+  --min-font: 25;
+  --max-font: 53;
+  font-size: clamp(
+    var(--min-font) * 1px,
+    var(--responsive),
+    var(--max-font) * 1px
+  );
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   -webkit-line-clamp: 2; /* number of lines to show */
+   -webkit-box-orient: vertical;
+   font-family: 'Scheherazade New', serif;
+   
+   text-shadow:
+    0 0.1em 20px black, 0.05em -0.03em 0 black, 0.05em 0.005em 0 black, 0em 0.08em 0 black, 0.05em 0.08em 0 black, 0px -0.03em 0 black, -0.03em -0.03em 0 black, -0.03em 0.08em 0 black, -0.03em 0 0 black;
+}
+
+
+
+
+
+
+.author {
+  font-size: 2.5rem;
+  letter-spacing: 0.05em;
+  line-height: 5.5;
+}
+.author:before {
+  content: "—";
+}
+
+/* .citation {
+  font-size: 2.5rem;
+  font-style: italic;
+}
+.citation:before {
+  content: ", ";
+  font-style: normal;
+}
+.year:before {
+  content: ", ";
+  font-style: normal;
+} */
+
+
+.frame{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  transition:box-shadow 0.6s cubic-bezier(.79,.21,.06,.81);
+  border-radius: 10px;
+  position: absolute;
+  right: 50%;
+  bottom: 10%;
+  overflow: hidden;
+}
+
+/* 
+#loadQuote{
+  height: 65px;
+  width: 300px;
+  border-radius: 3px;
+  background: #e0e5ec;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: transparent;
+  box-shadow:
+   -7px -7px 20px 0px #fff9,
+   -4px -4px 5px 0px #fff9,
+   7px 7px 20px 0px #0002,
+   4px 4px 5px 0px #0001;
+ transition:box-shadow 0.6s cubic-bezier(.79,.21,.06,.81);
+  font-size: 26px;
+  color: #666;
+  text-decoration: none;
+} */
+button #loadQuote {
+
+display: flex;
+align-items: center !important;
+
+}
+@keyframes colorchange {
+	to {filter: hue-rotate(360deg);}
+}
+
+
+#loadQuote:focus {
+  outline: none;
+}
+
+@media (max-width: 420px) {
+  .text {
+    font-size: 2.5rem;
+  }
+  .text:before, .text:after {
+    font-size: 3rem;
+  }
+  .author {
+    font-size: 1rem;
+  }
+}
+
+
+/* style dark mode */
+#toggle-btn {
+  padding: 0.5em;
+  font-weight: 800;
+}
+
+#toggle-btn:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+ .dark-mode-toggle {
+  background: #000;
+  color: #fff;
+}
+
+#theme {
+  width: 100vw;
+  height: 100vh;
+}
+
+.dark-mode-theme {
+  background: #000;
+  color: #fff;
+}
+
+
+
+
+/* class input
+.form-check-input {
+  opacity: 0;
+  position: absolute;
+}
+
+ */
+
+
+
+
+/* Multi Buttons */
+
+
+
+.multi-button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  flex-direction: row;
+
+  direction: ltr;
+}
+
+button{
+  font-size: 5vmin;
+  padding: .5em 1em;
+  color: #4A5568;
+  border: 0px solid #A0AEC0;
+  margin: .1em;
+  transition: background .2s ease, color .2s ease, box-shadow .2s ease, transform .2s ease;
+  box-shadow: 0 0 0 #BEE3F8;
+  transform: translateY(0);
+}
+button i{
+  color: #A0AEC0;
+  margin-right: .3em;
+  transition: all .2s ease-out;
+}
+.multi-button button{
+   filter: drop-shadow(2px 4px 6px gray); 
+   border-radius: 25px;
+}
+.multi-button:hover button{
+  color: #A0AEC0;
+}
+
+.multi-button:hover button:hover{
+  background: darkgreen;
+  color: #fff;
+  transform: translateY(-.2em);
+}
+.multi-button:hover button i{
+  color: #CBD5E0;
+}
+.multi-button:hover button:hover i{
+  color: #fff;
+  transform: rotate(-10deg);
+  font-weight: 900;
+}
+
+/* End Multi Buttons */
+
+/* Notifaction */
+.swal2-show {
+  height: fit-content;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* ///////////////////////////////////////////////// */  /* ///////////////////////////////////////////////// */
+
+/* النسخ */
+  /* onclick="copyToClipboard()" */
+
+  /* ///////////////////////////////////////////////// */  /* ///////////////////////////////////////////////// */
+
+  /* <!-- DARK MODE -->
+      <div class="nav-link menu-item" title="الوضع الليلي">
+        <div class="form-check form-switch">
+          <input type="checkbox" class="form-check-input" id="darkSwitch">
+          <label class="custom-control-label" for="darkSwitch">
+            <i class="fas fa-moon"></i>
+            <i class='fas fa-sun'></i>
+            <div class='ball'>
+            </div>
+          </label>
+        </div>
+
+        <script src="js/dark-mode-switch.min.js"></script>
+      </div>      */
+  /* ///////////////////////////////////////////////// */  /* ///////////////////////////////////////////////// */
+
+
+
+  /* انا
+  
+          <a href = "mailto:allamahmed464@gmail.com?subject = Feedback&body = Message" class="menu-item fa fa-user" title="تواصل مع المبرمج"></a>
+  */
+   /* ///////////////////////////////////////////////// */  /* ///////////////////////////////////////////////// */
+
+
+   @media screen and(max-width:600px) {
+    body .multi-button{
+      flex-direction: column !important;
+      display: flex;
+    }
+   }
+
+
+   
+   @media screen and(max-width:600px) {
+    button{
+      font-size: 6vmin;
+
+    }
+   }
+
+
+
+   @media screen and(max-width:375px) {
+     .author{
+   line-height: 7;
+   font-size: 9.5rem;
+    }
+   }
+
+
