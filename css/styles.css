@@ -26,6 +26,8 @@ body {
   align-items: center;
   flex-direction: column;
   overflow: hidden;
+  padding-right: 50px;
+	
 }
 /* .text {
   font-size: 4rem;
