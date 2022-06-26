@@ -332,8 +332,8 @@ button i{
     }
 	   
 	  #quote-box {
-
-	   font-size: 1.5rem;
+padding-right:200px !important;
+	   font-size: 1.5rem !important;
 	   }
    }
 
